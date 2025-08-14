@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap Tabs Login</title>
+  <!-- Bootstrap CSS CDN -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #f0f2f5;
+      background-image: url(Business\ loan@3x.png);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .login-container {
+     width: 50%;
+   /*    background: #fff; */
+ 
+ 
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgb(0 0 0 / 0.2);
+
+    }
+
+
+.msg{
+  width: 50% ;
+}
+.nav-pills > li a{
+  color: black;
+    font-size: 18px;
+}
+.nav-pills > li.active > a{
+
+  background-color: white;
+  border-bottom: 2px solid #1b2c66;
+  border-radius: 0px;
+
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    border-bottom: 2px solid #1b2c66;
+  border-radius: 0px;
+   background-color: white;
+   color: #1b2c66;
+}
+.tab-content{
+  width: 100%;
+  height: 60%;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 0.2);
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+    .header{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+    .header .logo-area  {
+      
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+       height: 80px;
+    
+    }
+     .header .logo-area p{
+      height: 100%;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+     }
+      .header .logo-area img{
+       
+
+        height: 80px;
+      }
+      
+      .custom-text-field {
+  position: relative !important;
+  font-size: 14px !important;
+  border-top: 20px solid transparent !important;
+  margin-bottom: 20px !important;
+  display: inline-block !important;
+  --field-padding: 12px !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.custom-text-field input {
+  background: none !important;
+  border: 2px solid #ddd !important;
+  border-radius: 3px !important;
+  width: 100% !important;
+  outline: none !important;
+  font-size: 14px !important;
+  padding: var(--field-padding) !important;
+  -webkit-appearance: none !important;
+  -ms-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  transition: border-color 0.3s ease !important;
+}
+
+.custom-text-field .placeholder {
+  position: absolute !important;
+  left: 8px !important;
+  padding: 0 5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #aaa !important;
+  transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease !important;
+  background: transparent !important;
+  pointer-events: none !important;
+  background-color: white !important;
+}
+
+.custom-text-field input:focus {
+  border-color: #222 !important;
+}
+
+.custom-text-field input:focus + .placeholder,
+.custom-text-field input:not(:placeholder-shown) + .placeholder {
+  top: 0 !important;
+  font-size: 10px !important;
+  color: #222 !important;
+  background: #fff !important;
+}
+.inputs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.inputs input{
+  border-top: none !important;
+  border-left: none !important;
+  border-right:none !important;
+  border-radius: 0px !important;
+ 
+}
+.inputs button{
+  width: 100%;
+  height: 50px;
+ 
+/*   background-color: #1b2c66; */
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #1b2c66;
+}
+.inputs button:hover {
+  background-color: #1b2c66;
+    color: white;
+}
+.msg h4{
+  color: white;
+  padding: 10px;
+  letter-spacing: 10px;
+  line-height: 40px;
+  text-align: justify;
+ 
+}
+  </style>
+</head>
+<body>
+  <section class="msg">
+  <h4 id="typing-text" style=" overflow: hidden;"></h4>
+  </section>
+  <section style="width: 50%; height: 100%; position: relative; background-color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 20px; gap: 20px;">
+    <div class="card-header" style="width: 80%; position: absolute; top: 5%; left:5%;">
+      <img src="logo.jpg" alt="" srcset="" style="width: 200px;">
+      </div>  
+ <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home" >Employee Login</a></li>
+    <li><a data-toggle="pill" href="#menu1">Mark Attendance</a></li>
+
+  </ul>
+
+
+ <div class="tab-content card-body" style="width: 80%; height: 60%; ">
+  
+    <div id="forget" class="tab-pane fade" style="width: 100%;">
+      <div class="header">
+        <div class="logo-area">
+       
+            <p style="font-size: 20px; color: #1b2c66; font-weight: bold;">Forget Password</p>
+        </div>
+      </div>
+       <div class="inputs">
+          <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee ID</span>
+</label>
+    <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee Password</span>
+</label>
+<button class="btn btn-login " style="margin-top: 40px;">Submit</button>
+    
+</div>
+    </div>
+    <div id="home" class="tab-pane fade in active" style="width: 100%;">
+       
+      <div class="inputs">
+          <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee ID</span>
+</label>
+    <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee Password</span>
+</label>
+<button class="btn btn-login " style="margin-top: 40px;">Login</button>
+    <li style="list-style: none; width: 100%; display: flex; justify-content: center; margin-top: 10px;"><a data-toggle="pill" href="#forget">Forget Password?</a></li>
+</div>
+    </div>
+    <div id="menu1" class="tab-pane fade" style="width: 100%;">
+       <div class="inputs">
+          <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee ID</span>
+</label>
+    <label class="custom-text-field">
+  <input type="text" placeholder=" " />
+  <span class="placeholder" style="opacity: 1;">Enter Employee Password</span>
+</label>
+<button class="btn btn-login " style="margin-top: 40px;">Make Attendance</button>
+    <li id="forget"style="list-style: none; width: 100%; display: flex; justify-content: center; margin-top: 10px;"><a data-toggle="pill" href="#forget">Forget Password?</a></li>
+</div>
+    </div>
+
+
+
+  
+  </div>
+</div>
+  </div>
+  </section>
+  <script>
+  const text = "Welcome back! Log in to stay connected, get things done, and make today count.";
+  const breakAfter = "connected,";
+  let i = 0;
+  const speed = 50; // typing speed in ms
+  const typingText = document.getElementById("typing-text");
+
+  // Create caret span
+  const caret = document.createElement("span");
+  caret.textContent = "|";
+  caret.style.display = "inline-block";
+  caret.style.marginLeft = "2px";
+  caret.style.animation = "blink 0.8s infinite";
+  typingText.appendChild(caret);
+
+  function typeWriter() {
+    if (i < text.length) {
+      // Insert character before the caret
+      caret.insertAdjacentText("beforebegin", text.charAt(i));
+
+      // Add line break after specific phrase
+      if (typingText.textContent.includes(breakAfter) && !typingText.innerHTML.includes("<br>")) {
+        caret.insertAdjacentHTML("beforebegin", "<br>");
+      }
+
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  // Blinking animation
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  typeWriter();
+</script>
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
